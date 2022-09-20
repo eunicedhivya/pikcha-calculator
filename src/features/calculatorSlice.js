@@ -12,17 +12,16 @@ const calculatorSlice = createSlice({
     reducers: {
       setexpression: (state, action) => {
         state.expression += action.payload;
-        // console.log("test", state.expression);
       },
       clearexpression: (state, action) => {
         state.expression = action.payload
+        state.output = 0
       },
       evaluate: (state, action) => {
         const final = (fn) => {
           return new Function("return " + fn)();
         }
         state.output = final(state.expression);
-        state.expression = "";
       }
     },
   });

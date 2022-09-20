@@ -10,8 +10,11 @@ function Calculator() {
 
   return (
     <div className='calculator'>
-        <div className='operations'>{expression || 0}</div>
-        <div className='output'>{output}</div>
+
+        <div className="result">
+          {expression && <div className='operations'>{expression || 0}</div>}
+          <div className='output'>{output}</div>
+        </div>
         <Operator />
     </div>
   )
